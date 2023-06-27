@@ -5,7 +5,7 @@ using namespace std;
 
 vector<int> solution(vector<string> wallpaper) {
     vector<int> answer;
-    int maxX = 0, maxY = 0, minX = wallpaper[0].length()+1, minY = wallpaper.size()+1;
+    int maxX = 0, maxY = 0, minX = wallpaper[0].length(), minY = wallpaper.size();
     
     for(int i=0;i<wallpaper.size();i++){
         for(int j=0;j<wallpaper[i].length();j++){
