@@ -10,10 +10,12 @@ vector<int> solution(vector<int> arr, int divisor) {
     for (auto a : arr){
         if(a % divisor == 0)
             answer.push_back(a);
-        else if(answer.empty() && a == arr.back())
-            answer.push_back(-1);
     }
     
     sort(answer.begin(), answer.end());
+    
+    if(answer.empty())
+        answer.push_back(-1);
+    
     return answer;
 }
