@@ -6,19 +6,11 @@ int main()
     ios_base::sync_with_stdio(0);
     cin.tie(0);
 
-    vector<string> s;
+    string s;
 
-    while (1)
+    while (getline(cin, s))
     {
-        string tmp;
-        getline(cin, tmp);
-        if (cin.eof()) break;
-        s.push_back(tmp);
-    }
-
-    for (string str : s)
-    {
-        cout << str << "\n";
+        cout << s << "\n";
     }
 
     return 0;
