@@ -17,16 +17,15 @@ int main()
     v[2] = 2;
     v[3] = 4;
 
+    for (int j = 4; j <= 11; j++)
+    {
+        v[j] = v[j - 1] + v[j - 2] + v[j - 3];
+    }
+
     for (int i = 0; i < n; i++)
     {
         int num;
         cin >> num;
-
-        for (int j = 4; j <= num; j++)
-        {
-            v[j] = v[j - 1] + v[j - 2] + v[j - 3];
-        }
-
         cout << v[num] << "\n";
     }
 
