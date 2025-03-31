@@ -12,24 +12,27 @@ int main()
 
     cin >> n >> m >> s;
 
-    string target;
-    string trash = "##";
+	int res = 0;
+	for (int i = 0; i < m; i++)
+	{
 
-    for (int i = 0; i < n; i++)
-    {
-        target += "IO";
-    }
-    target += "I";
+		int k = 0;
+		if (s[i] == 'O') continue;
 
-    int cnt = 0;
-    while (s.find(target) != string::npos)
-    {
-        int idx = s.find(target);
-        s.replace(idx, 2, trash);
-        cnt++;
-    }
+		while (s[i + 1] == 'O' && s[i + 2] == 'I')
+		{
+			k++;
 
-    cout << cnt;
+			if (k == n)
+			{
+				res++;
+				k--;
+			}
+			i += 2;
+		}
+	}
+
+    cout << res;
 
     return 0;
 }
