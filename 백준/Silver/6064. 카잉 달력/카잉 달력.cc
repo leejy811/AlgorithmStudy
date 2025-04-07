@@ -1,9 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-long long gcd(long long a, long long b)
+int gcd(int a, int b)
 {
-    long long r;
+    int r;
     while (b != 0)
     {
         r = a % b;
@@ -13,7 +13,7 @@ long long gcd(long long a, long long b)
     return a;
 }
 
-long long lcm(long long a, long long b)
+int lcm(int a, int b)
 {
     return (a * b) / gcd(a, b);
 }
@@ -30,12 +30,12 @@ int main()
 
 	for (int i = 0; i < t; i++)
 	{
-        long long m, n, x, y;
+        int m, n, x, y;
 
         cin >> m >> n >> x >> y;
 
-        long long a = x, b = (x % n == 0) ? n : x % n, cnt = x;
-        long long limit = lcm(m, n);
+        int a = x, b = (x % n == 0) ? n : x % n, cnt = x;
+        int limit = lcm(m, n);
         while (1)
         {
             if (a == x && b == y)
