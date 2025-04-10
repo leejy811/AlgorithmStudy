@@ -65,7 +65,7 @@ int main()
     queue<pair<int, int>> q;
     vector<int> visit(cnt);
 
-    q.push(make_pair(0, 0));
+    q.push(make_pair(0, 1));
     visit[0] = true;
     while (!q.empty())
     {
@@ -73,7 +73,7 @@ int main()
 
         if (mp[make_pair(n - 1, m - 1)] == f.first)
         {
-            cout << f.second + 1;
+            cout << f.second;
             break;
         }
 
