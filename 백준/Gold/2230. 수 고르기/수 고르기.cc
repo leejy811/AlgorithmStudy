@@ -19,11 +19,18 @@ int main()
     sort(v.begin(), v.end());
 
     int minimum = INT_MAX;
-    for (int i = 0; i < n; i++)
+    int st = 0, en = 0;
+    while (st < n && en < n)
     {
-        int lowIdx = lower_bound(v.begin(), v.end(), v[i] + m) - v.begin();
-        if (lowIdx < n)
-            minimum = min(v[lowIdx] - v[i], minimum);
+        if (v[en] - v[st] >= m)
+        {
+            minimum = min(minimum, v[en] - v[st]);
+            st++;
+        }
+        else
+        {
+            en++;
+        }
     }
 
     cout << minimum;
