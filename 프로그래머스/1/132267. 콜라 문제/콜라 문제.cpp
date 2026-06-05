@@ -1,0 +1,16 @@
+#include <string>
+#include <vector>
+
+using namespace std;
+
+int solution(int a, int b, int n) {
+    int answer = 0;
+    
+    while((n / a) != 0){
+        int add = (n / a) * b;
+        n = add + (n % a);
+        answer += add;
+    }
+    
+    return answer;
+}
